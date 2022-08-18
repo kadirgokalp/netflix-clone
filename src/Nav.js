@@ -3,23 +3,23 @@ import './Nav.css'
 
 
 function Nav() {
-    //const [show , handleShow] = useState(false);
+    const [show , handleShow] = useState(false);
 
-    // useEffect(() => {
-    //     window.addEventListener("scroll" , ()=>{
-    //         if(window.scrollY > 100) {
-    //             handleShow(true);
-    //         } else handleShow(false);
-    //     });
-    //     return () => {
-    //         window.removeEventListener("scroll");
-    //     };
-    // },[]);
+    useEffect(() => {
+        window.addEventListener("scroll" , ()=>{
+            if(window.scrollY > 100) {
+                handleShow(true);
+            } else handleShow(false);
+        });
+        // return () => {
+        //     window.removeEventListener("scroll");
+        // };
+    },[]);
 
     // {`nav ${show && "nav_black"}`}
 
   return (
-    <div className="nav" >
+    <div className={`nav ${show && "nav_black"}`} >
         <img 
             className='nav_logo'
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/6/69/20220504140801%21Netflix_logo.svg/120px-Netflix_logo.svg.png" 
